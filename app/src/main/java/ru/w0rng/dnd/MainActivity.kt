@@ -3,7 +3,6 @@ package ru.w0rng.dnd
 import android.app.ActivityManager
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,10 +12,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.app.NotificationManagerCompat
 import ru.w0rng.dnd.ui.theme.AndroindTheme
+import java.util.UUID
 
 class MainActivity : ComponentActivity() {
+    companion object {
+        var clientId = UUID.randomUUID().toString()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
